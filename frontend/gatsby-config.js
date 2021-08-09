@@ -50,8 +50,8 @@ module.exports = {
       options: {
         apiURL: `http://localhost:1337`,
         queryLimit: 1000, // Defaults to 100
-        collectionTypes: [`photo`, `gallery`],
-        singleTypes: [`home-page`, `contact`],
+        collectionTypes: [`gallery`],
+        singleTypes: [],
       },
     },
   ],
