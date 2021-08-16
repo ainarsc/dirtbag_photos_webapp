@@ -28,7 +28,7 @@ export const pageQuery = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  aspectRatio: 1.5
+                  
                   layout: FULL_WIDTH
                   placeholder: DOMINANT_COLOR
                 )
@@ -51,6 +51,5 @@ const Wrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   padding: 4rem 2rem 2rem 2rem;
 `
