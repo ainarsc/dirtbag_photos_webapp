@@ -80,8 +80,8 @@ $RECYCLE.BIN/
 ssl
 .idea
 nbproject
-public/uploads/*
-!public/uploads/.gitkeep
+backend/public/uploads/*
+!backend/public/uploads/.gitkeep
 
 ############################
 # Node.js
@@ -115,4 +115,4 @@ build
 
 # gatsby files
 .cache/
-public
+frontend/public
