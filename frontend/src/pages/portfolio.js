@@ -19,26 +19,32 @@ const Portfolio = ({data}) => {
   )
 }
 
-export default Portfolio
-
-
 export const pageQuery = graphql`
-    query {
-      allStrapiGallery {
-        edges {
-          node {
-            cover {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData(layout: FULL_WIDTH)
-                }
+  query {
+    allStrapiGallery {
+      edges {
+        node {
+          thumbnail {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  aspectRatio: 1.5
+                  layout: FULL_WIDTH
+                  placeholder: DOMINANT_COLOR
+                )
               }
             }
           }
         }
       }
     }
+  }
 `
+
+export default Portfolio
+
+
+
 
 const Wrapper = styled.div`
   width: 100%;

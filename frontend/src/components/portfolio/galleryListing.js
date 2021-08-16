@@ -1,22 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import Image from './Image'
 
 
 export default function GalleryListing({edges}) {
 
     return (
-            edges.map(({node}) => {
-                    node.cover.map((i) => {
-                        <>
-                            <GalleryCard>
-                                <GatsbyImage image={getImage(i.localFile)} alt="" />
-                            </GalleryCard>
-                            <GalleryCard/>
-                        </>
-                    })
-                })
-
+            edges.map(({node}) => 
+                    <GalleryCard>
+                            <Image image={node.thumbnail.localFile} />
+                    </GalleryCard>
+                    
+                )
     )
         
 }

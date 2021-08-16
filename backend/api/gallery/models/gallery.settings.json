@@ -18,13 +18,12 @@
     "link": {
       "type": "string"
     },
-    "cover": {
-      "collection": "file",
+    "thumbnail": {
+      "model": "file",
       "via": "related",
       "allowedTypes": [
         "images",
-        "files",
-        "videos"
+        "files"
       ],
       "plugin": "upload",
       "required": false,
