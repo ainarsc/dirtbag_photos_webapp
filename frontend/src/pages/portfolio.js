@@ -1,30 +1,44 @@
 import * as React from "react"
 import Layout from '../components/layout'
 import styled from 'styled-components'
+import GalleryListing from '../components/portfolio/galleryListing'
+import {graphql} from 'gatsby'
+
 
 
 // markup
-export default () => {
+const Portfolio = ({data}) => {
+  const {allStrapiGallery} = data
+
   return (
       <Layout>
         <Wrapper>
-          <GalleryCard>
-
-          </GalleryCard>
-          <GalleryCard>
-            
-          </GalleryCard>
-          <GalleryCard>
-            
-          </GalleryCard>
-          <GalleryCard>
-            
-          </GalleryCard>
-          
+          <GalleryListing edges={allStrapiGallery.edges} />
         </Wrapper>
       </Layout>
   )
 }
+
+export default Portfolio
+
+
+export const pageQuery = graphql`
+    query {
+      allStrapiGallery {
+        edges {
+          node {
+            cover {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(layout: FULL_WIDTH)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+`
 
 const Wrapper = styled.div`
   width: 100%;
@@ -34,18 +48,3 @@ const Wrapper = styled.div`
   justify-content: space-around;
   padding: 4rem 2rem 2rem 2rem;
 `
-
-const GalleryCard = styled.div`
-  margin-top: 1rem;
-  border: 1px solid white;
-  width: 100%;
-  height: 100%;
-`
-const GalleryTitleBox = styled.div`
-
-`
-const Title = styled.span`
-
-`
-
-

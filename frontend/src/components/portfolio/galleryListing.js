@@ -5,17 +5,20 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 export default function GalleryListing({edges}) {
 
-    return <>
-        {
-        edges.map(({node}) => {
-                node.cover.map((i) => {
-                    <GalleryCard>
-                        <GatsbyImage image={getImage(i.localFile)} alt="" />
-                    </GalleryCard>
+    return (
+            edges.map(({node}) => {
+                    node.cover.map((i) => {
+                        <>
+                            <GalleryCard>
+                                <GatsbyImage image={getImage(i.localFile)} alt="" />
+                            </GalleryCard>
+                            <GalleryCard/>
+                        </>
+                    })
                 })
-            })
-        }
-    </>
+
+    )
+        
 }
 
 
