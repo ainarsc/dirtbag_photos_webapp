@@ -19,7 +19,10 @@ export default function GalleryListing({edges}) {
 const GalleryCard = styled.div`
   min-width: 50%;
   padding: 2px;
-  background-size: contain;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
 `
 const GalleryTitleBox = styled.div`
 
