@@ -32,7 +32,7 @@ export const pageQuery = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  
+                  aspectRatio: 1.7
                   layout: FULL_WIDTH
                   placeholder: DOMINANT_COLOR
                 )

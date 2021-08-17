@@ -18,8 +18,8 @@ export default function GalleryListing({edges}) {
 
 const GalleryCard = styled.div`
   min-width: 50%;
-  background-attachment: cover;
   padding: 2px;
+  background-size: contain;
 `
 const GalleryTitleBox = styled.div`
 
