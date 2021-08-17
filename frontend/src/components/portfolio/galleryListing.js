@@ -17,10 +17,9 @@ export default function GalleryListing({edges}) {
 
 
 const GalleryCard = styled.div`
-  margin-top: 1rem;
-  width: 100%;
-  height: 5rem;
-
+  min-width: 50%;
+  background-attachment: cover;
+  padding: 2px;
 `
 const GalleryTitleBox = styled.div`
 

@@ -14,6 +14,10 @@ const Portfolio = ({data}) => {
       <Layout>
         <Wrapper>
           <GalleryListing edges={allStrapiGallery.edges} />
+          <GalleryListing edges={allStrapiGallery.edges} />
+          <GalleryListing edges={allStrapiGallery.edges} />
+          <GalleryListing edges={allStrapiGallery.edges} />
+          <GalleryListing edges={allStrapiGallery.edges} />
         </Wrapper>
       </Layout>
   )
@@ -41,15 +45,15 @@ export const pageQuery = graphql`
   }
 `
 
-export default Portfolio
-
-
-
-
 const Wrapper = styled.div`
   width: 100%;
-  height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: space-between;
   padding: 4rem 2rem 2rem 2rem;
+
 `
+
+export default Portfolio
