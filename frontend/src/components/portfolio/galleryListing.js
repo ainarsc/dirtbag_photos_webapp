@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from './Image'
+import {Link} from 'gatsby'
 
 
 export default function GalleryListing({edges}) {
@@ -8,7 +9,8 @@ export default function GalleryListing({edges}) {
     return (
             edges.map(({node}) => 
                     <GalleryCard>
-                            <ImgBox>
+                                    <Link to="/">
+                                    <ImgBox>
                                 <Image image={node.thumbnail.localFile} />
                             </ImgBox>
                             
@@ -17,6 +19,8 @@ export default function GalleryListing({edges}) {
                                     Placeholder
                                 </Title>
                             </GalleryTitleBox>
+                                    </Link>
+
                     </GalleryCard>
                     
                 )
