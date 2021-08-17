@@ -8,7 +8,15 @@ export default function GalleryListing({edges}) {
     return (
             edges.map(({node}) => 
                     <GalleryCard>
-                            <Image image={node.thumbnail.localFile} />
+                            <ImgBox>
+                                <Image image={node.thumbnail.localFile} />
+                            </ImgBox>
+                            
+                            <GalleryTitleBox>
+                                <Title>
+                                    Placeholder
+                                </Title>
+                            </GalleryTitleBox>
                     </GalleryCard>
                     
                 )
@@ -19,12 +27,26 @@ export default function GalleryListing({edges}) {
 const GalleryCard = styled.div`
   min-width: 50%;
   padding: 2px;
-  opacity: 0.8;
+  border-radius: 10px;
   &:hover {
+    div${ImgBox}{
     opacity: 1;
+    }
   }
-`
-const GalleryTitleBox = styled.div`
 
 `
-const Title = styled.span``
+const GalleryTitleBox = styled.div`
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(25, 25, 25);
+`
+const Title = styled.span`
+    font-size: 1em;
+    letter-spacing: 8px;
+`
+const ImgBox = styled.div`
+    opacity: 0.8;
+`
