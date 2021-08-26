@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "about",
+  "info": {
+    "name": "about"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "about": {
+      "type": "string"
+    },
+    "aboutDescription": {
+      "type": "text"
+    }
+  }
+}
