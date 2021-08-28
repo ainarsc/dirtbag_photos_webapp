@@ -1,16 +1,33 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "./portfolio/Image";
-import { graphql, Link } from "gatsby";
+import Image from "../components/portfolio/Image";
+import { graphql, Link, useStaticQuery } from "gatsby";
 
-export default function Gallery({ data }) {
+export default function Gallery() {
+  const data = useStaticQuery(graphql`
+    query {
+      allStrapiGallery {
+        edges {
+          node {
+            photos {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
   return (
     <Wrapper>
-      {data.map(({ node }) => (
+      {data.allStrapiGallery.edges.map(({ node }) => (
         <GalleryCard>
           <Link to="/">
             <ImgBox>
-              <Image image={node.thumbnail.localFile} />
+              <Image image={node.photos.localFile} />
             </ImgBox>
           </Link>
         </GalleryCard>
@@ -18,24 +35,6 @@ export default function Gallery({ data }) {
     </Wrapper>
   );
 }
-
-export const photoQuerty = graphql`
-  query {
-    allStrapiGallery {
-      edges {
-        node {
-          photos {
-            localFile {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
 
 const Wrapper = styled.div`
   width: 100%;

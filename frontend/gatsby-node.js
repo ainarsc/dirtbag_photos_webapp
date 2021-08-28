@@ -6,21 +6,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
   // Query for Strapi galleries nodes to use in creating pages.
-  const result = await graphql(
-    `
-        query {
-            allStrapiGallery {
-            edges {
-                node {
-                id
-                title
-                }
-            }
-            }
+  const result = await graphql(`
+    query {
+      allStrapiGallery {
+        edges {
+          node {
+            id
+            link
+          }
         }
-        }
-    `
-  );
+      }
+    }
+  `);
 
   // Handle errors
   if (result.errors) {
@@ -32,7 +29,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const galleryTemplate = path.resolve(`src/templates/gallery.js`);
 
   result.data.allStrapiGallery.edges.forEach(({ node }) => {
-    let path = node.title.toLowerCase();
+    let path = `portfolio/${node.link}`;
+    console.log(path);
     createPage({
       path,
       component: galleryTemplate,
