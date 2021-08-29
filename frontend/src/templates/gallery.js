@@ -1,38 +1,44 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "../components/portfolio/Image";
-import { graphql, Link, useStaticQuery } from "gatsby";
+import Layout from "../components/layout";
+import { Link } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-export default function Gallery() {
-  const data = useStaticQuery(graphql`
-    query {
-      allStrapiGallery {
-        edges {
-          node {
-            photos {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+export default function Gallery({ photos }) {
+  //photos = array
+
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     allStrapiGallery {
+  //       edges {
+  //         node {
+  //           photos {
+  //             localFile {
+  //               childImageSharp {
+  //                 gatsbyImageData
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
+
   return (
-    <Wrapper>
-      {data.allStrapiGallery.edges.map(({ node }) => (
-        <GalleryCard>
-          <Link to="/">
-            <ImgBox>
-              <Image image={node.photos.localFile} />
-            </ImgBox>
-          </Link>
-        </GalleryCard>
-      ))}
-    </Wrapper>
+    <Layout>
+      <Wrapper>
+        {photos.map(({ localFile }) => (
+          <Photo>
+            <Link to="/">
+              <ImgBox>
+                <GatsbyImage image={getImage(localFile)} alt="Photo" />
+              </ImgBox>
+            </Link>
+          </Photo>
+        ))}
+      </Wrapper>
+    </Layout>
   );
 }
 
@@ -46,7 +52,7 @@ const Wrapper = styled.div`
   padding: 4rem 2rem 2rem 2rem;
 `;
 
-const GalleryCard = styled.div`
+const Photo = styled.div`
   min-width: 50%;
   padding: 2px;
   border-radius: 10px;
