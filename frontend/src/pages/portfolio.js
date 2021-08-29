@@ -1,7 +1,7 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import styled from "styled-components";
-import { graphql, link } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Image from "../components/portfolio/Image";
 
 //GRAPHQL QUERY
@@ -10,6 +10,7 @@ export const pageQuery = graphql`
     allStrapiGallery {
       edges {
         node {
+          link
           thumbnail {
             localFile {
               childImageSharp {
@@ -36,7 +37,7 @@ const Portfolio = ({ data }) => {
       <Wrapper>
         {allStrapiGallery.edges.map(({ node }) => (
           <GalleryCard>
-            <Link to="/">
+            <Link to={node.link}>
               <ImgBox>
                 <Image image={node.thumbnail.localFile} />
               </ImgBox>

@@ -11,8 +11,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       allStrapiGallery {
         edges {
           node {
-            id
             link
+            photos {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    aspectRatio: 1.7
+                    layout: FULL_WIDTH
+                    placeholder: DOMINANT_COLOR
+                  )
+                }
+              }
+            }
           }
         }
       }
@@ -25,19 +35,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return;
   }
 
-  // Create pages for each markdown file.
+  // GALLERY TEMPLATE
   const galleryTemplate = path.resolve(`src/templates/gallery.js`);
 
   result.data.allStrapiGallery.edges.forEach(({ node }) => {
     let path = `portfolio/${node.link}`;
-    console.log(path);
+
     createPage({
       path,
       component: galleryTemplate,
-      // In your blog post template's graphql query, you can use pagePath
-      // as a GraphQL variable to query for data from the markdown file.
       context: {
         pagePath: path,
+        photos: node.photos,
       },
     });
   });

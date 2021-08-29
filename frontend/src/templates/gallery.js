@@ -4,26 +4,8 @@ import Layout from "../components/layout";
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-export default function Gallery({ photos }) {
-  //photos = array
-
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     allStrapiGallery {
-  //       edges {
-  //         node {
-  //           photos {
-  //             localFile {
-  //               childImageSharp {
-  //                 gatsbyImageData
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `);
+export default function Gallery({ pageContext }) {
+  const { photos } = pageContext; //Returns an array
 
   return (
     <Layout>
