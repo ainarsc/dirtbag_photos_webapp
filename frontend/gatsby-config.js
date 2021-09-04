@@ -38,12 +38,12 @@ module.exports = {
       __key: "pages",
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ['Raleway', 'Zen Tokyo Zoo']
-        }
-      }
+          families: ["Raleway", "Zen Tokyo Zoo"],
+        },
+      },
     },
     {
       resolve: `gatsby-source-strapi`,
@@ -51,7 +51,7 @@ module.exports = {
         apiURL: `http://localhost:1337`,
         queryLimit: 1000, // Defaults to 100
         collectionTypes: [`gallery`],
-        singleTypes: [],
+        singleTypes: [`about`],
       },
     },
   ],
