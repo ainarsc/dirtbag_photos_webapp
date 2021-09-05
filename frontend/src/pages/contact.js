@@ -25,7 +25,7 @@ const IndexPage = () => {
         </Label>
         <Fielset>
           <Button type="submit">Send</Button>
-          <Input type="reset" value="Clear" />
+          <ButtonInput type="reset" value="Clear" />
         </Fielset>
       </Form>
     </Layout>
@@ -35,21 +35,66 @@ const IndexPage = () => {
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  padding: 5rem;
+  padding: 8rem;
   align-items: center;
   justify-content: center;
 `;
 const Label = styled.label`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 7px 0;
 `;
-const Input = styled.input``;
-const TextArea = styled.textarea``;
+const Input = styled.input`
+  width: 100%;
+  max-width: 800px;
+  background-color: rgba(245, 245, 245, 0.9);
+  border: 1px solid rgba(245, 245, 245, 0.5);
+  height: 30px;
+  border-radius: 5px;
+  margin-top: 3px;
+  :hover {
+    border: 1px solid rgba(138, 43, 226, 0.8);
+  }
+`;
+const TextArea = styled.textarea`
+  height: 300px;
+  width: 100%;
+  max-width: 800px;
+  background-color: rgba(245, 245, 245, 0.9);
+  border: 1px solid rgba(245, 245, 245, 0.5);
+  border-radius: 5px;
+  margin-top: 3px;
+  :hover {
+    border: 1px solid rgba(138, 43, 226, 0.8);
+  }
+`;
 const Fielset = styled.fieldset`
   border: none;
+  display: flex;
 `;
-const Button = styled.button``;
+const Button = styled.button`
+  background-color: rgba(25, 25, 25, 0.8);
+  border: 1px solid rgba(245, 245, 245, 0.5);
+  height: 30px;
+  border-radius: 5px;
+  margin-top: 3px;
+  width: 100px;
+  margin: 0 5px;
+  color: rgb(245, 245, 245);
+  :hover {
+    border: 1px solid rgba(138, 43, 226, 0.8);
+  }
+  cursor: pointer;
+`;
+
+const ButtonInput = styled(Input)`
+  width: 100px;
+  margin: 0 5px;
+  background-color: rgba(25, 25, 25, 0.8);
+  color: rgb(245, 245, 245);
+  cursor: pointer;
+`;
 
 export default IndexPage;
