@@ -31,23 +31,38 @@ export const pageQuery = graphql`
 //MARKUP
 const Portfolio = ({ data }) => {
   const { allStrapiGallery } = data;
+  //FILTER ITEMS
+  const TRAVEL = "-TRAVEL",
+    ADVENTURE = "-ADVENTURE",
+    MOUNTAINS = "-MOUNTAINS",
+    EXPLORE = "-EXPLORE";
 
   return (
     <Layout>
       <Wrapper>
-        {allStrapiGallery.edges.map(({ node }) => (
-          <GalleryCard>
-            <Link to={node.link}>
-              <ImgBox>
-                <Image image={node.thumbnail.localFile} />
-              </ImgBox>
+        <Filter>
+          <List>
+            <ListItem>{TRAVEL}</ListItem>
+            <ListItem>{ADVENTURE}</ListItem>
+            <ListItem>{MOUNTAINS}</ListItem>
+            <ListItem>{EXPLORE}</ListItem>
+          </List>
+        </Filter>
+        <GalleryWrapper>
+          {allStrapiGallery.edges.map(({ node }) => (
+            <GalleryCard>
+              <Link to={node.link}>
+                <ImgBox>
+                  <Image image={node.thumbnail.localFile} />
+                </ImgBox>
 
-              <GalleryTitleBox>
-                <Title>Placeholder</Title>
-              </GalleryTitleBox>
-            </Link>
-          </GalleryCard>
-        ))}
+                <GalleryTitleBox>
+                  <Title>Placeholder</Title>
+                </GalleryTitleBox>
+              </Link>
+            </GalleryCard>
+          ))}
+        </GalleryWrapper>
       </Wrapper>
     </Layout>
   );
@@ -55,12 +70,48 @@ const Portfolio = ({ data }) => {
 
 const Wrapper = styled.div`
   width: 100%;
+  height: 100%;
+  padding: 4rem 2rem 2rem 2rem;
+  display: flex;
+  align-items: flex-start;
+  align-content: space-between;
+`;
+
+const GalleryWrapper = styled.div`
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: flex-start;
   justify-content: space-between;
-  padding: 4rem 2rem 2rem 2rem;
+`;
+
+const Filter = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 100%;
+  align-items: flex-start;
+  justify-content: center;
+`;
+const List = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: 0;
+`;
+const ListItem = styled.li`
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5rem;
+  text-align: left;
+  font-size: 20px;
+  :hover {
+    font-size: 27px;
+  }
+  cursor: pointer;
 `;
 
 const GalleryCard = styled.div`
