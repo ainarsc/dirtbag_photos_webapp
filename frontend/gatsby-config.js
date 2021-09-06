@@ -41,7 +41,7 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Raleway", "Zen Tokyo Zoo"],
+          families: ["Raleway", "Yellowtail"],
         },
       },
     },
