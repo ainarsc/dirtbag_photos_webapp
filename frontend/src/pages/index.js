@@ -1,14 +1,11 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import styled from "styled-components";
-import mountains from "../images/mountains.jpg";
-import exploring from "../images/exploring.jpg";
-import travel from "../images/travel.jpg";
-import climbing from "../images/climbing.jpg";
+import landing from "../images/landing.jpg";
 
 // markup
 const IndexPage = () => {
-  const BRABD = "dirtbag photography",
+  const BRABD = "Ainars Ciesa",
     CATEGORY_1 = "travel",
     CATEGORY_2 = "mountains",
     CATEGORY_3 = "explore",
@@ -18,10 +15,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <Wrapper>
-        <Box image={travel} />
-        <Box image={mountains} />
-        <Box image={exploring} />
-        <Box image={climbing} />
+        <Box image={landing} />
       </Wrapper>
       <HeadlineArea>
         <Headline>{BRABD}</Headline>
@@ -50,12 +44,12 @@ const Box = styled.div`
   background-image: url(${(props) => props.image});
   background-position: center;
   background-size: cover;
-  opacity: 0.7;
+  /* opacity: 0.7; */
 `;
 const HeadlineArea = styled.div`
   position: fixed;
   top: 40%;
-  width: 100%;
+  width: 50%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -66,6 +60,7 @@ const HeadlineArea = styled.div`
 const Headline = styled.div`
   text-decoration: underline;
   font-size: 2.5rem;
+  font-weight: 100;
   letter-spacing: 8px;
   padding-bottom: 1.5rem;
 `;
