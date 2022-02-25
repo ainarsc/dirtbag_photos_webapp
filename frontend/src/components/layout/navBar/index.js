@@ -7,7 +7,7 @@ export default () => {
   //Sidebar state
   const [isVisible, setVisibility] = useState(false);
   //Brand section
-  const BRAND = "dirtbag photography";
+  const BRAND = "ainars ciesa photography";
 
   return (
     <Wrapper>
@@ -35,7 +35,7 @@ const Brand = styled.div`
   padding-left: 20px;
   flex: 1;
   color: ${({ theme }) => theme.primaryLight};
-  font-family: "Yellowtail", cursive;
+  font-family: "Poiret One", cursive;
   letter-spacing: 1.6px;
-  font-size: 25px;
+  font-size: 35px;
 `;

@@ -1,9 +1,9 @@
-import { createGlobalStyle } from "styled-components"
-import BackgroundImage from '../../images/Flat-Mountains.svg'
+import { createGlobalStyle } from "styled-components";
+import BackgroundImage from "../../images/Flat-Mountains.svg";
 
 const GlobalStyles = createGlobalStyle`
   * {
-    font-family: 'raleway', sans-serif; 
+    font-family: 'Poiret One', cursive; 
     text-decoration: none;
     box-sizing: border-box;
     color: ${({ theme }) => theme.primaryLight};
@@ -23,6 +23,6 @@ const GlobalStyles = createGlobalStyle`
     background-size: cover;
   }
  
-`
+`;
 
-export default GlobalStyles
+export default GlobalStyles;

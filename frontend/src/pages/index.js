@@ -18,7 +18,7 @@ const IndexPage = () => {
         <Box image={landing} />
       </Wrapper>
       <HeadlineArea>
-        <Headline>{BRABD}</Headline>
+        {/* <Headline>{BRABD}</Headline> */}
         <SubHeading>
           <Tag>{CATEGORY_1}</Tag>
           <Tag>{CATEGORY_2}</Tag>
@@ -49,14 +49,15 @@ const Box = styled.div`
 const HeadlineArea = styled.div`
   position: fixed;
   top: 40%;
-  width: 50%;
+  width: 40%;
   padding: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: rgba(50, 50, 50, 0.5);
+  border-right: 1px solid white;
 `;
+
 const Headline = styled.div`
   text-decoration: underline;
   font-size: 2.5rem;
@@ -67,16 +68,19 @@ const Headline = styled.div`
 
 const SubHeading = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   width: 100%;
 `;
 
 const Tag = styled.span`
   font-size: 2em;
+  font-weight: 100;
   display: flex;
+  justify-content: flex-end;
   padding: 2px 0;
   letter-spacing: 7px;
-  font-weight: 100;
+  font-size: 40px;
 `;
 
 export default IndexPage;
