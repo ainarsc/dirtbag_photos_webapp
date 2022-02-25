@@ -55,7 +55,7 @@ const HeadlineArea = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid white;
+  border-right: 1px solid ${({ theme }) => theme.themeColors.alternative};
 `;
 
 const Headline = styled.div`

@@ -65,7 +65,6 @@ const StyledList = styled.ul`
 
 const ListItem = styled.li`
   & a {
-    font-family: "Raleway";
     color: #dfe6e9;
     text-transform: uppercase;
     font-weight: 300;
@@ -73,6 +72,7 @@ const ListItem = styled.li`
     transition: all 300ms linear 0s;
     text-decoration: none;
     cursor: pointer;
+    font-size: 20px;
     &.active {
       color: ${({ theme }) => theme.themeColors.alternative};
     }
