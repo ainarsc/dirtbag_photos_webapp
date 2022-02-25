@@ -38,4 +38,5 @@ const Brand = styled.div`
   font-family: "Poiret One", cursive;
   letter-spacing: 1.6px;
   font-size: 35px;
+  text-shadow: 2px 2px rgba(25, 25, 25, 0.5);
 `;

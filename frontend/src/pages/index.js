@@ -44,7 +44,7 @@ const Box = styled.div`
   background-image: url(${(props) => props.image});
   background-position: center;
   background-size: cover;
-  /* opacity: 0.7; */
+  filter: contrast(80%);
 `;
 const HeadlineArea = styled.div`
   position: fixed;
@@ -81,6 +81,7 @@ const Tag = styled.span`
   padding: 2px 0;
   letter-spacing: 7px;
   font-size: 40px;
+  text-shadow: 4px 4px rgba(25, 25, 25, 0.8);
 `;
 
 export default IndexPage;
