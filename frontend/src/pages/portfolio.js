@@ -39,13 +39,22 @@ const Portfolio = ({ data }) => {
 
   return (
     <Layout>
+      <LinksContainer>
+        <Links>
+          <LinkItem>{TRAVEL}</LinkItem>
+          <LinkItem>{ADVENTURE}</LinkItem>
+          <LinkItem>{MOUNTAINS}</LinkItem>
+          <LinkItem>{EXPLORE}</LinkItem>
+        </Links>
+      </LinksContainer>
+
       <Wrapper>
         <Filter>
           <List>
-            <ListItem>{TRAVEL}</ListItem>
-            <ListItem>{ADVENTURE}</ListItem>
+            <ListItem></ListItem>
+            {/* <ListItem>{ADVENTURE}</ListItem>
             <ListItem>{MOUNTAINS}</ListItem>
-            <ListItem>{EXPLORE}</ListItem>
+            <ListItem>{EXPLORE}</ListItem> */}
           </List>
         </Filter>
         <GalleryWrapper>
@@ -71,10 +80,11 @@ const Portfolio = ({ data }) => {
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  padding: 4rem 2rem 2rem 2rem;
+  padding: 5rem 2rem 2rem 2rem;
   display: flex;
   align-items: flex-start;
   align-content: space-between;
+  overflow: overlay;
 `;
 
 const GalleryWrapper = styled.div`
@@ -138,6 +148,31 @@ const Title = styled.span`
 `;
 const ImgBox = styled.div`
   opacity: 0.8;
+`;
+
+const LinksContainer = styled.div`
+  position: fixed;
+  top: 45%;
+  left: 1rem;
+`;
+const Links = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: 0;
+`;
+const LinkItem = styled.li`
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5rem;
+  text-align: left;
+  font-size: 20px;
+  :hover {
+    font-size: 27px;
+  }
+  cursor: pointer;
 `;
 
 export default Portfolio;
