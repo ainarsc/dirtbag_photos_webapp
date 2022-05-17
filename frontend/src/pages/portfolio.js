@@ -32,6 +32,8 @@ export const pageQuery = graphql`
 const Portfolio = ({ data }) => {
   const { allStrapiGallery } = data;
   //FILTER ITEMS
+  //TODO: Change into an array
+  //Change <Links> into a map to loop through
   const TRAVEL = "-TRAVEL",
     ADVENTURE = "-ADVENTURE",
     MOUNTAINS = "-MOUNTAINS",
@@ -49,25 +51,18 @@ const Portfolio = ({ data }) => {
       </LinksContainer>
 
       <Wrapper>
-        <Filter>
-          <List>
-            <ListItem></ListItem>
-            {/* <ListItem>{ADVENTURE}</ListItem>
-            <ListItem>{MOUNTAINS}</ListItem>
-            <ListItem>{EXPLORE}</ListItem> */}
-          </List>
-        </Filter>
+        <Empty>{/* Left as empty div, too lazy to re do layout */}</Empty>
         <GalleryWrapper>
           {allStrapiGallery.edges.map(({ node }) => (
             <GalleryCard>
               <Link to={node.link}>
                 <ImgBox>
                   <Image image={node.thumbnail.localFile} />
-                </ImgBox>
 
-                <GalleryTitleBox>
-                  <Title>Placeholder</Title>
-                </GalleryTitleBox>
+                  <GalleryTitleBox>
+                    <Title>Placeholder</Title>
+                  </GalleryTitleBox>
+                </ImgBox>
               </Link>
             </GalleryCard>
           ))}
@@ -96,7 +91,7 @@ const GalleryWrapper = styled.div`
   justify-content: space-between;
 `;
 
-const Filter = styled.div`
+const Empty = styled.div`
   display: flex;
   flex-direction: column;
   width: 20%;
@@ -104,52 +99,38 @@ const Filter = styled.div`
   align-items: flex-start;
   justify-content: center;
 `;
-const List = styled.ul`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  padding: 0;
-`;
-const ListItem = styled.li`
-  text-decoration: none;
-  list-style: none;
-  padding: 0;
-  margin-top: 0.5rem;
-  text-align: left;
-  font-size: 20px;
-  :hover {
-    font-size: 27px;
-  }
-  cursor: pointer;
-`;
 
 const GalleryCard = styled.div`
   min-width: 50%;
   padding: 2px;
   border-radius: 10px;
   &:hover {
-    div${ImgBox} {
-      opacity: 1;
+    div${GalleryTitleBox} {
+      opacity: 10;
     }
   }
 `;
+const ImgBox = styled.div`
+  position: relative;
+`;
+
 const GalleryTitleBox = styled.div`
+  position: absolute;
+  top: 45%;
   width: 100%;
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgb(25, 25, 25);
+  z-index: 88;
+  opacity: 0;
 `;
+
 const Title = styled.span`
   font-size: 1em;
   letter-spacing: 8px;
 `;
-const ImgBox = styled.div`
-  opacity: 0.8;
-`;
-
 const LinksContainer = styled.div`
   position: fixed;
   top: 45%;
