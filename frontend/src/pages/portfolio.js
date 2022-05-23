@@ -62,6 +62,7 @@ const Portfolio = ({ data }) => {
                   <GalleryTitleBox>
                     <Title>Placeholder</Title>
                   </GalleryTitleBox>
+                  <Overlay />
                 </ImgBox>
               </Link>
             </GalleryCard>
@@ -107,8 +108,13 @@ const GalleryCard = styled.div`
   overflow: hidden;
 
   &:hover {
+    transition: all 0.5s ease-in-out;
+
     div${GalleryTitleBox} {
-      opacity: 10;
+      opacity: 100%;
+    }
+    div${Overlay} {
+      background-color: rgba(25, 25, 25, 0.5);
     }
   }
 `;
@@ -117,16 +123,26 @@ const ImgBox = styled.div`
   border-radius: 10px;
 `;
 
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 88;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+`;
+
 const GalleryTitleBox = styled.div`
   position: absolute;
-  top: 45%;
+  top: 40%;
   width: 100%;
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(25, 25, 25);
-  z-index: 88;
+  background-color: rgb(5, 5, 5);
+  z-index: 90;
   opacity: 0;
   transition: all 0.5s ease-in-out;
 `;
@@ -154,6 +170,8 @@ const LinkItem = styled.li`
   margin-top: 0.5rem;
   text-align: left;
   font-size: 20px;
+  transition: all 0.5s ease-in-out;
+
   :hover {
     font-size: 27px;
   }
