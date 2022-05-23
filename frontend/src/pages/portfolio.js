@@ -135,14 +135,14 @@ const Overlay = styled.div`
 
 const GalleryTitleBox = styled.div`
   position: absolute;
-  top: 40%;
+  top: calc(50% - 1em); //TODO: DO better way later
   width: 100%;
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgb(5, 5, 5);
-  z-index: 90;
+  z-index: 89;
   opacity: 0;
   transition: all 0.5s ease-in-out;
 `;
