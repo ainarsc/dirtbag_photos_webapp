@@ -103,7 +103,9 @@ const Empty = styled.div`
 const GalleryCard = styled.div`
   min-width: 50%;
   padding: 2px;
-  border-radius: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+
   &:hover {
     div${GalleryTitleBox} {
       opacity: 10;
@@ -112,6 +114,7 @@ const GalleryCard = styled.div`
 `;
 const ImgBox = styled.div`
   position: relative;
+  border-radius: 10px;
 `;
 
 const GalleryTitleBox = styled.div`
@@ -125,6 +128,7 @@ const GalleryTitleBox = styled.div`
   background-color: rgb(25, 25, 25);
   z-index: 88;
   opacity: 0;
+  transition: all 0.5s ease-in-out;
 `;
 
 const Title = styled.span`
