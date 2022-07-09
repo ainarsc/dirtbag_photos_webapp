@@ -23,19 +23,25 @@ export default function Lightbox() {
 
 // CSS
 const Background = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-content: center;
   justify-content: center;
   align-items: center;
-  filter: blur(5px);
+  background-color: rgba(5, 5, 5, 0.5);
+  backdrop-filter: blur(10px);
 `;
 
 const PhotoView = styled.div`
   width: 100px;
   height: 250px;
   background-color: green;
+  filter: blur(0px);
 `;
 
 const ButtonRight = styled.div``;
