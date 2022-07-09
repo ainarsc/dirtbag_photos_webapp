@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Layout from "../components/layout";
+// import Lightbox from "../components/lightbox";
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
@@ -20,6 +21,7 @@ export default function Gallery({ pageContext }) {
           </Photo>
         ))}
       </Wrapper>
+      {/* <Lightbox/> */}
     </Layout>
   );
 }
