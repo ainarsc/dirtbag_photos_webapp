@@ -16,7 +16,9 @@ export default function Lightbox() {
 
   return (
     <Background>
-      <PhotoView>FOO</PhotoView>
+      <PhotoView>
+        <Close />
+      </PhotoView>
     </Background>
   );
 }
@@ -38,12 +40,44 @@ const Background = styled.div`
 `;
 
 const PhotoView = styled.div`
-  width: 100px;
-  height: 250px;
-  background-color: green;
+  width: 80%;
+  height: 80%;
+  background-color: rgb(25, 25, 25);
   filter: blur(0px);
 `;
 
 const ButtonRight = styled.div``;
 const ButtonLeft = styled.div``;
-const Close = styled.div``;
+const Close = styled.div`
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+  &:hover {
+    opacity: 1;
+  }
+  &::before {
+    position: absolute;
+    left: 15px;
+    content: " ";
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+  }
+  &::after {
+    position: absolute;
+    left: 15px;
+    content: " ";
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+  }
+  &::before {
+    transform: rotate(45deg);
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+`;
