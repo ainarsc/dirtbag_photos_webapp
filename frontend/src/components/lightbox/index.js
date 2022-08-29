@@ -55,6 +55,7 @@ const Close = styled.div`
   width: 32px;
   height: 32px;
   opacity: 0.3;
+  cursor: pointer;
   &:hover {
     opacity: 1;
   }
@@ -64,7 +65,7 @@ const Close = styled.div`
     content: " ";
     height: 33px;
     width: 2px;
-    background-color: #333;
+    background-color: rgb(225, 225, 225);
   }
   &::after {
     position: absolute;
@@ -72,7 +73,7 @@ const Close = styled.div`
     content: " ";
     height: 33px;
     width: 2px;
-    background-color: #333;
+    background-color: rgb(225, 225, 225);
   }
   &::before {
     transform: rotate(45deg);
